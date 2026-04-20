@@ -27,12 +27,12 @@
   <!-- Navbar -->
     <x-navbar />
 
-<section class="relative h-[90vh] flex items-center justify-center bg-black overflow-hidden">
+<section class="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
     <div class="absolute inset-0 opacity-40">
-        <img src="{{ asset('images/Camer.jpeg') }}" class="w-full h-full object-cover scale-110 animate-[pulse_15s_infinite]">
+        <img src="{{ asset('images/limbe.jpg') }}" class="w-full h-full object-cover scale-110 animate-[pulse_15s_infinite]">
     </div>
     <div class="relative z-10 text-center px-6" data-aos="zoom-out">
-        <h1 class="text-white text-5xl md:text-7xl font-bold mb-4">L'Art de l'Excellence</h1>
+        <h1 class="text-white text-5xl md:text-7xl font-bold mt-4">L'Art de l'Excellence</h1>
         <p class="text-gold uppercase tracking-[0.4em] text-sm">Notre vision, votre héritage</p>
     </div>
 </section>
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="relative" data-aos="fade-left">
-        <img src="{{ asset('images/img1.jpeg') }}" class="rounded-lg shadow-2xl relative z-10">
+        <img src="{{ asset('images/logo2.png') }}" class="rounded-lg shadow-2xl relative z-10">
         <div class="absolute -top-4 -right-4 w-full h-full border-2 border-gold rounded-lg -z-0"></div>
     </div>
 </section>
