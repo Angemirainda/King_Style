@@ -19,7 +19,7 @@
 <body class="bg-stone-50">
     <!-- Navbar -->
     <x-navbar />
-
+     <!-- Section des offres -->
     <section class="pt-32 pb-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class=" text-center mb-16" data-aos="fade-down">
@@ -32,7 +32,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <div class="group relative bg-gray-50 p-8 rounded-2xl border border-gray-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute inset-0 border-2 border-transparent group-hover:border-gray-300 rounded-2xl transition-all"></div>
+                    <div class="absolute inset-0 border-2 border-transparent group-hover:border-gray-300 rounded-2xl transition-all pointer-events-none"></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-400">Silver</h3>
                     <p class="text-2xl font-bold mb-6">200.000 FCFA</p>
                     <p class="text-gray-400 text-sm mb-10">"L’essentiel, simplement"</p>
@@ -42,6 +42,7 @@
                         <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Assistance 24h/7j</li>
                     </ul>
                     <a href="/reservation?pack=silver" class="w-full text-center py-4 bg-black text-white font-bold rounded-xl hover:bg-yellow-600 transition-all duration-300 hover:scale-105 hover:shadow-lg inline-block">Choisir Silver</a>
+                    
                 </div>
 
                 <div class="group relative bg-white p-8 rounded-2xl border-2 border-yellow-500/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-4" data-aos="fade-up" data-aos-delay="200">

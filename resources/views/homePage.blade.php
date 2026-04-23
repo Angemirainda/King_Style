@@ -79,7 +79,7 @@
     </div>
 </section>
 
-<section class="py-24 bg-white text-center px-6">
+<!-- <section class="py-24 bg-white text-center px-6">
     <div data-aos="fade-down">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
             Pourquoi choisir <span class="text-yellow-500">le Cameroun</span> ?
@@ -116,20 +116,140 @@
             </div>
         </div>
 
-        <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-            <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
-                <img src="{{asset('images/foret.jpeg')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+       
+    </div>
+</section> -->
+<section class="py-24 bg-white text-center px-6 overflow-hidden">
+    <div data-aos="fade-down">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Pourquoi choisir <span class="text-yellow-500">le Cameroun</span> ?
+        </h2>
+        <p class="max-w-2xl mx-auto text-gray-500 mb-16 italic text-lg">
+            "L’Afrique en miniature : une immersion totale où chaque détail est une découverte."
+        </p>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto min-h-[500px]">
+        
+        
+        <div id="group-1" class="grid md:grid-cols-3 gap-10 transition-all duration-1000 opacity-100 translate-x-0">
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
+                    <img src="{{asset('images/plage.jpeg')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Plages paradisiaques</h3>
+                <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">Kribi & Limbé</p>
+                <div class="mt-2 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
+                   <a href="#">
+                    <span>Explorer</span>
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                    
+                </div>
+                
             </div>
-            <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Paysages variés</h3>
-            <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">Montagnes & Savanes</p>
-            <div class="mt-4 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
-                <span>S'évader</span>
-                <i class="fa-solid fa-arrow-right ml-2"></i>
+
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
+                    <img src="{{asset('images/danse.PNG')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Cultures vibrantes</h3>
+                <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">Tradition & Folklore</p>
+                <div class="mt-2 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
+                   <a href="3">
+                     <span>Decouvrir</span>
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                   </a>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
+                    <img src="{{asset('images/foret.jpeg')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Paysages variés</h3>
+                <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">Montagnes & Savanes</p>
+                <div class="mt-2 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
+                    <a href="#">
+                        <span>S'evader</span>
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="group-2" class="grid md:grid-cols-3 gap-10 transition-all duration-1000 opacity-0 translate-x-10 absolute top-0 left-0 w-full pointer-events-none">
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
+                    <img src="{{asset('images/poisson.jpg')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Variété Culinaire</h3>
+                <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">Saveurs & Épices</p>
+                <div class="mt-2 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
+                    <a href="#">
+                        <span>Decouvrir</span>
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
+                    <img src="{{asset('images/logo1.png')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Service Premium</h3>
+                <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">L'Excellence KING STYLE</p>
+                <div class="mt-2 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
+                    <a href="#">
+                        <span>Profiter</span>
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-xl shadow-xl mb-6">
+                    <img src="{{asset('images/vacance.png')}}" class="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h3 class="text-2xl font-bold group-hover:text-yellow-600 transition-colors">Accueil Chaleureux</h3>
+                <p class="text-gray-400 mt-2 text-sm uppercase tracking-widest">Hospitalité & Sourires</p>
+                <div class="mt-2 flex items-center justify-center text-yellow-500 font-bold group-hover:gap-4 transition-all">
+                    <a href="#">
+                        <span>Vivre l'expérience</span>
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const group1 = document.getElementById('group-1');
+        const group2 = document.getElementById('group-2');
+        let showGroup1 = true;
+
+        setInterval(() => {
+            if (showGroup1) {
+                // Cacher le groupe 1, montrer le groupe 2
+                group1.classList.remove('opacity-100', 'translate-x-0');
+                group1.classList.add('opacity-0', '-translate-x-10', 'pointer-events-none');
+                
+                group2.classList.remove('opacity-0', 'translate-x-10', 'pointer-events-none');
+                group2.classList.add('opacity-100', 'translate-x-0');
+            } else {
+                // Cacher le groupe 2, montrer le groupe 1
+                group2.classList.remove('opacity-100', 'translate-x-0');
+                group2.classList.add('opacity-0', 'translate-x-10', 'pointer-events-none');
+                
+                group1.classList.remove('opacity-0', '-translate-x-10', 'pointer-events-none');
+                group1.classList.add('opacity-100', 'translate-x-0');
+            }
+            showGroup1 = !showGroup1;
+        }, 6000); // Change toutes les 6 secondes
+    });
+</script>
 
 <section class="py-24 bg-stone-900 text-white overflow-hidden">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
@@ -177,7 +297,7 @@
             <div class="h-64 overflow-hidden relative">
                 <img src="{{asset('images/'.$img)}}" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button class="bg-white text-black px-6 py-2 rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">Explorer</button>
+                    <button class="bg-white text-black px-6 py-2 rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform"><a href="#">Explorer</a></button>
                 </div>
             </div>
             <div class="p-6">
@@ -255,7 +375,7 @@
             <p class="text-xl italic text-gray-700 mb-8">
                 "Avec <span class="text-yellow-600 font-bold">KING STYLE</span>, vous choisissez votre niveau d’expérience. Nous nous occupons du reste."
             </p>
-            <a href="/reservation" class="inline-flex items-center gap-3 bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-yellow-500 hover:text-black transition-all duration-300 shadow-xl group">
+            <a href="/offers" class="inline-flex items-center gap-3 bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-yellow-500 hover:text-black transition-all duration-300 shadow-xl group">
                 reserver mon séjour
                 <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
             </a>

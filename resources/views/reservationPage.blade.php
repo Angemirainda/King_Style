@@ -22,7 +22,7 @@
                 <div class="space-y-6">
                     <div>
                         <p class="text-gray-400 text-xs uppercase tracking-widest">Offre sélectionnée</p>
-                        <p class="text-yellow-500 text-xl font-bold uppercase">{{ request('pack', 'Standard') }}</p>
+                        <p class="text-yellow-500 text-xl font-bold uppercase">{{ request('pack', 'Silvers') }}</p>
                     </div>
                     <div class="pt-6 border-t border-white/10 text-sm space-y-4">
                         <p class="flex items-center"><i class="fas fa-lock text-yellow-500 mr-3"></i> Paiement 100% sécurisé</p>
