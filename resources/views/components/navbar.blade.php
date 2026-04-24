@@ -3,10 +3,10 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
 
             <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white">
-                <a href="/home" class="hover:text-yellow-400 transition-colors duration-300">Accueil</a>
-                <a href="/about" class="hover:text-yellow-400 transition-colors duration-300">À propos</a>
-                <a href="/services" class="hover:text-yellow-400 transition-colors duration-300">Nos services</a>
-                <a href="/destinations" class="hover:text-yellow-400 transition-colors duration-300">Destinations</a>
+                <a href="/home" class="transition-colors duration-300 {{ request()->is('home') ? 'text-yellow-400' : 'text-white hover:text-yellow-400' }}">Accueil</a>
+                <a href="/about" class="transition-colors duration-300 {{ request()->is('about') ? 'text-yellow-400' : 'text-white hover:text-yellow-400' }}">À propos</a>
+                <a href="/services" class="transition-colors duration-300 {{ request()->is('services') ? 'text-yellow-400' : 'text-white hover:text-yellow-400' }}">Nos services</a>
+                <a href="/destinations" class="transition-colors duration-300 {{ request()->is('destinations') ? 'text-yellow-400' : 'text-white hover:text-yellow-400' }}">Destinations</a>
             </nav>
 
             <div class="text-center group cursor-pointer">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="flex items-center space-x-6 text-sm">
-                <a href="/offers" class="hidden lg:block text-white hover:text-yellow-400 transition-colors">Réservation</a>
+                <a href="/offers" class="hidden lg:block transition-colors duration-300 {{ request()->is('offers') ? 'text-yellow-400' : 'text-white hover:text-yellow-400' }}">Réservation</a>
 
                 <div class="flex items-center space-x-3 border-l border-gray-700 pl-6">
                     <img src="https://flagcdn.com/w20/fr.png" class="cursor-pointer hover:opacity-70 transition-opacity" alt="FR">

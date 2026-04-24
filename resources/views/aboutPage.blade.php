@@ -14,6 +14,10 @@
         body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .carousel-slide { opacity: 0; transition: opacity 1s ease-in-out; }
+        .carousel-slide.active { opacity: 1; }
+        .carousel-dot { background: rgba(255,255,255,0.55); }
+        .carousel-dot.active { background: rgba(212,175,55,0.95); }
     </style>
 
     <script>
@@ -24,9 +28,10 @@
 </head>
 <body class="bg-stone-50 text-gray-900 overflow-x-hidden">
 
-  <!-- Navbar -->
+  <!-- Composant Navbar -->
     <x-navbar />
 
+<!-- Section Hero : bannière immersive avec image de fond et titre -->
 <section class="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
     <div class="absolute inset-0 opacity-40">
         <img src="{{ asset('images/limbe.jpg') }}" class="w-full h-full object-cover scale-110 animate-[pulse_15s_infinite]">
@@ -37,6 +42,7 @@
     </div>
 </section>
 
+<!-- Section Qui sommes-nous : présentation de l'agence et de ses valeurs -->
 <section class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
     <div data-aos="fade-right">
         <h2 class="text-4xl font-bold mb-8">Qui sommes-nous ?</h2>
@@ -66,6 +72,7 @@
     </div>
 </section>
 
+<!-- Section Explorez le Cameroun : cartes thématiques avec carrousels et texte descriptif -->
 <section class="py-20 bg-stone-900 text-white">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-20" data-aos="fade-up">
@@ -73,9 +80,29 @@
             <div class="h-1 w-20 bg-gold mx-auto"></div>
         </div>
 
+        <!-- Plages section: balnéaire, relaxation et itinéraires côtiers -->
         <div id="plages" class="grid md:grid-cols-2 gap-12 items-center mb-32" data-aos="fade-up">
             <div class="order-2 md:order-1">
-                <img src="{{ asset('images/plage.jpeg') }}" class="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500">
+                <div class="explore-carousel relative overflow-hidden rounded-xl shadow-lg h-[28rem] sm:h-[30rem]">
+                    <div class="carousel-slide absolute inset-0 active">
+                        <img src="{{ asset('images/limbe.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/chute1.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/kribi2.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/Kribi.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="0" aria-label="Slide 1"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="1" aria-label="Slide 2"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="2" aria-label="Slide 3"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
             </div>
             <div class="order-1 md:order-2">
                 <span class="text-gold uppercase tracking-widest text-xs font-bold">Évasion Balnéaire</span>
@@ -87,6 +114,7 @@
             </div>
         </div>
 
+        <!-- Culture section: traditions, festivals et découverte patrimoniale -->
         <div id="culture" class="grid md:grid-cols-2 gap-12 items-center mb-32" data-aos="fade-up">
             <div>
                 <span class="text-gold uppercase tracking-widest text-xs font-bold">Patrimoine Vivant</span>
@@ -97,13 +125,52 @@
                 <a href="#reservation" class="inline-block border-b-2 border-gold pb-1 hover:text-gold transition">Découvrir l'histoire →</a>
             </div>
             <div class="relative">
-                <img src="{{ asset('images/danse.PNG') }}" class="rounded-xl shadow-lg grayscale hover:grayscale-0 transition duration-700">
+                <div class="explore-carousel relative overflow-hidden rounded-xl shadow-lg h-[28rem] sm:h-[30rem]">
+                    <div class="carousel-slide absolute inset-0 active">
+                        <img src="{{ asset('images/Cameroun.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/fete.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/traditionnel.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/ngondo.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="0" aria-label="Slide 1"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="1" aria-label="Slide 2"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="2" aria-label="Slide 3"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- Paysages section: nature sauvage, randonnées et panoramas divers -->
         <div id="paysages" class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
             <div class="order-2 md:order-1">
-                <img src="{{ asset('images/foret.jpeg') }}" class="rounded-xl shadow-lg">
+                <div class="explore-carousel relative overflow-hidden rounded-xl shadow-lg h-[28rem] sm:h-[30rem]">
+                    <div class="carousel-slide absolute inset-0 active">
+                        <img src="{{ asset('images/paysa1.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/paysa2.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/foret.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/paysa3.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="0" aria-label="Slide 1"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="1" aria-label="Slide 2"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="2" aria-label="Slide 3"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
             </div>
             <div class="order-1 md:order-2">
                 <span class="text-gold uppercase tracking-widest text-xs font-bold">Nature Sauvage</span>
@@ -114,9 +181,113 @@
                 <a href="#reservation" class="inline-block border-b-2 border-gold pb-1 hover:text-gold transition">Partir à l'aventure →</a>
             </div>
         </div>
+
+        <!-- Gastronomie section: cuisine locale et expériences culinaires authentiques -->
+        <div id="gastronomie" class="grid md:grid-cols-2 gap-12 items-center mb-32" data-aos="fade-up">
+            <div>
+                <span class="text-gold uppercase tracking-widest text-xs font-bold">Gastronomie Variee</span>
+                <h3 class="text-3xl font-bold mt-2 mb-6">Dégustations Authentiques</h3>
+                <p class="text-gray-400 mb-8">
+                    Découvrez plus de 250 ethnies. KING STYLE vous ouvre les portes des chefferies traditionnelles de l'Ouest et vous invite aux festivals ancestraux. Une immersion rare au cœur des traditions Bamiléké, Sawa et du Grand Nord.
+                </p>
+                <a href="#reservation" class="inline-block border-b-2 border-gold pb-1 hover:text-gold transition">Découvrir l'histoire →</a>
+            </div>
+            <div class="relative">
+                <div class="explore-carousel relative overflow-hidden rounded-xl shadow-lg h-[28rem] sm:h-[30rem]">
+                    <div class="carousel-slide absolute inset-0 active">
+                        <img src="{{ asset('images/plage.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/danse.PNG') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/foret.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/poisson.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="0" aria-label="Slide 1"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="1" aria-label="Slide 2"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="2" aria-label="Slide 3"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conciergerie section: service premium et assistance VIP au voyage -->
+        <div id="conciergerie" class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+            <div class="order-2 md:order-1">
+                <div class="explore-carousel relative overflow-hidden rounded-xl shadow-lg h-[28rem] sm:h-[30rem]">
+                    <div class="carousel-slide absolute inset-0 active">
+                        <img src="{{ asset('images/plage.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/danse.PNG') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/foret.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/poisson.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="0" aria-label="Slide 1"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="1" aria-label="Slide 2"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="2" aria-label="Slide 3"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <span class="text-gold uppercase tracking-widest text-xs font-bold">L'excellence King Style</span>
+                <h3 class="text-3xl font-bold mt-2 mb-6">Service Premium</h3>
+                <p class="text-gray-400 mb-8">
+                    L'Afrique en miniature porte bien son nom. Des forêts denses du bassin du Congo aux savanes du Septentrion, en passant par le majestueux Mont Cameroun, nous organisons vos safaris et randonnées avec un confort premium.
+                </p>
+                <a href="#reservation" class="inline-block border-b-2 border-gold pb-1 hover:text-gold transition">Partir à l'aventure →</a>
+            </div>
+        </div>
+
+        <!-- Hospitalité section: accueil chaleureux et atmosphère camerounaise -->
+        <div id="gastronomie" class="grid md:grid-cols-2 gap-12 items-center mb-32" data-aos="fade-up">
+            <div>
+                <span class="text-gold uppercase tracking-widest text-xs font-bold">Hospitalite</span>
+                <h3 class="text-3xl font-bold mt-2 mb-6">Accueil Chaleureux</h3>
+                <p class="text-gray-400 mb-8">
+                    Découvrez plus de 250 ethnies. KING STYLE vous ouvre les portes des chefferies traditionnelles de l'Ouest et vous invite aux festivals ancestraux. Une immersion rare au cœur des traditions Bamiléké, Sawa et du Grand Nord.
+                </p>
+                <a href="#reservation" class="inline-block border-b-2 border-gold pb-1 hover:text-gold transition">Découvrir l'histoire →</a>
+            </div>
+            <div class="relative">
+                <div class="explore-carousel relative overflow-hidden rounded-xl shadow-lg h-[28rem] sm:h-[30rem]">
+                    <div class="carousel-slide absolute inset-0 active">
+                        <img src="{{ asset('images/plage.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/danse.PNG') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/foret.jpeg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide absolute inset-0">
+                        <img src="{{ asset('images/poisson.jpg') }}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="0" aria-label="Slide 1"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="1" aria-label="Slide 2"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="2" aria-label="Slide 3"></button>
+                        <button type="button" class="carousel-dot w-3 h-3 rounded-full border border-white" data-index="3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
+<!-- Section Réservation : incitation à la prise de contact ou réservation -->
 <section id="reservation" class="py-24 bg-white text-center">
     <div class="max-w-3xl mx-auto px-6" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl font-bold mb-8">Le voyage d'une vie vous attend.</h2>
@@ -134,12 +305,60 @@
     </div>
 </section>
 
-<!-- Footer !-->
+<!-- Section Pied de page : liens de contact et mentions légales -->
     <x-footer />
 
+<!-- Scripts : initialisation des animations et comportement des carrousels -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1200, once: true });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousels = document.querySelectorAll('.explore-carousel');
+        const slideDelay = 5000;
+
+        carousels.forEach(container => {
+            const slides = container.querySelectorAll('.carousel-slide');
+            const dots = container.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            let timer;
+
+            function showSlide(index) {
+                slides.forEach((slide, idx) => {
+                    slide.classList.toggle('active', idx === index);
+                });
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === index);
+                });
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                showSlide((currentIndex + 1) % slides.length);
+            }
+
+            function startCarousel() {
+                timer = setInterval(nextSlide, slideDelay);
+            }
+
+            function resetCarousel() {
+                clearInterval(timer);
+                startCarousel();
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    showSlide(Number(this.dataset.index));
+                    resetCarousel();
+                });
+            });
+
+            if (slides.length) {
+                showSlide(0);
+                startCarousel();
+            }
+        });
+    });
 </script>
 </body>
 </html>
